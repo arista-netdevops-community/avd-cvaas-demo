@@ -1,4 +1,4 @@
-FROM ghcr.io/ankudinov/avd-cvaas-demo/demo-base:latest
+FROM ghcr.io/arista-netdevops-community/avd-cvaas-demo/demo-base:latest
 
 ARG _ARTOKEN
 ARG _AR_FILE_PATH
