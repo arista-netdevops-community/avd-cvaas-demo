@@ -1,0 +1,16 @@
+---
+mgmt_gateway: 192.168.0.1
+mgmt_interface: Management0
+
+name_servers:
+  - 192.168.2.1
+  - 8.8.8.8
+
+dns_domain: avd.lab
+
+# Local Users
+local_users:
+  - name: arista
+    privilege: 15
+    role: network-admin
+    sha512_password: "{{ ansible_password | password_hash(salt='workshop') }}"
