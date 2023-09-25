@@ -7,7 +7,10 @@
             "_ARTOKEN": "${localEnv:ARTOKEN}"
         }
     },
-    "onCreateCommand": "docker import /home/vscode/tmp/ceos-lab-temp ceos-lab:latest; rm -rf /home/vscode/tmp/; echo \"${localEnv:CVTOKEN}\" > ${workspaceFolder}/clab/cv-onboarding-token",
+    "remoteEnv": {
+		"CONTAINERWSF": "${containerWorkspaceFolder}"
+	},
+    "onCreateCommand": "docker import /home/vscode/tmp/ceos-lab-temp ceos-lab:latest; rm -rf /home/vscode/tmp/; echo \"${localEnv:CVTOKEN}\" > ${CONTAINERWSF}/clab/cv-onboarding-token",
     // set minimum host requirements for cLab
     "hostRequirements": {
         "cpus": 4,
