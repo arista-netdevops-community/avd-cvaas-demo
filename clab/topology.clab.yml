@@ -15,12 +15,20 @@ topology:
   nodes:
     spine1:
       mgmt-ipv4: 192.168.0.10
+      binds:
+        - cv-onboarding-token:/tmp/cv-onboarding-token:ro
     spine2:
       mgmt-ipv4: 192.168.0.11
+      binds:
+        - cv-onboarding-token:/tmp/cv-onboarding-token:ro
     leaf1:
       mgmt-ipv4: 192.168.0.12
+      binds:
+        - cv-onboarding-token:/tmp/cv-onboarding-token:ro
     leaf2:
       mgmt-ipv4: 192.168.0.13
+      binds:
+        - cv-onboarding-token:/tmp/cv-onboarding-token:ro
     a_host:
       startup-config: init-configs/a_host.cfg
       mgmt-ipv4: 192.168.0.100
