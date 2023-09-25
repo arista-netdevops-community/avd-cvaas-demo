@@ -16,9 +16,13 @@ stop: ## Destroy ceos lab
 build: ## Generate AVD configs
 	cd $(CURRENT_DIR)/avd_inventory; ansible-playbook playbooks/avd_build.yml
 
-.PHONY: deploy
-deploy: ## Deploy AVD configs using eAPI
+.PHONY: deploy_eapi
+deploy_eapi: ## Deploy AVD configs using eAPI
 	cd $(CURRENT_DIR)/avd_inventory; ansible-playbook playbooks/avd_deploy.yml
+
+.PHONY: deploy_cvp
+deploy_cvp: ## Deploy AVD configs using eAPI
+	cd $(CURRENT_DIR)/avd_inventory; ansible-playbook playbooks/avd_deploy_cvp.yml
 
 .PHONY: diff
 diff: ## Show the diff between running config and designed config
