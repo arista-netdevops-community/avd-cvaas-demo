@@ -84,7 +84,41 @@ footer: '![h:20](https://www.arista.com/assets/images/logo/Arista_Logo.png)'
 ![bg right ](img/pexels-suzy-hazelwood-1226398.jpg)
 
 - Ansible AVD collection overview
-- tbd
+- The demo
+- Credits and references
+
+---
+
+# What is Ansible AVD?
+
+<style scoped>section {font-size: 20px;}</style>
+
+![bg right fit](excalidraw/provisioning-building-blocks.png)
+
+- [AVD](https://avd.arista.com/) stands for Arista Validated Design as it was based on the [EVPN Deployment Guide](https://www.arista.com/custom_data/downloads/?f=/support/download/DesignGuides/EVPN_Deployment_Guide.pdf)
+- A very successful community project used to deploy EVPN based Data Center fabrics
+  - Over [200 stars on Github](https://github.com/aristanetworks/ansible-avd) and 79 contributors as of Sep 2023
+  - The most active Arista collection on [Ansible Galaxy](https://galaxy.ansible.com/arista/avd)
+- High level workflow:
+  - Define abstracted group/host vars using AVD data model
+  - Generate low level device specific variables (aka structured configs)
+  - Parse templates, build plain text configs
+  - Deliver configs to network devices using Ansible `arista.eos.eos_config`
+
+---
+
+# The Demo
+
+<style scoped>section {font-size: 20px;}</style>
+
+![bg right fit](excalidraw/demo-setup.png)
+
+- Start container as Github Codespace (or on any host with dev container supporting tool)
+- Start a simple leaf-spine topology in Containerlab
+- Build EVPN configuration with `arista.avd` Ansible collection
+- Wait until the lab switches will start streaming using a pre-defined token
+- Deploy configuration to CVP using `arista.avd` Ansible collection and pre-defined API token
+- Create change control, review and execute the change
 
 ---
 
@@ -117,18 +151,11 @@ Tool | Purpose
 
 ---
 
-# What is Ansible AVD?
+<style scoped>section {font-size: 45px;}</style>
 
-<style scoped>section {font-size: 20px;}</style>
+![bg left opacity:80%](img/pexels-ann-h-7186206.jpg)
 
-![bg right fit](excalidraw/provisioning-building-blocks.png)
+# Q&A
 
-- [AVD](https://avd.arista.com/) stands for Arista Validated Design as it was based on the [EVPN Deployment Guide](https://www.arista.com/custom_data/downloads/?f=/support/download/DesignGuides/EVPN_Deployment_Guide.pdf)
-- A very successful community project used to deploy EVPN based Data Center fabrics
-  - Over [200 stars on Github](https://github.com/aristanetworks/ansible-avd) and 79 contributors as of Sep 2023
-  - The most active Arista collection on [Ansible Galaxy](https://galaxy.ansible.com/arista/avd)
-- High level workflow:
-  - Define abstracted group/host vars using AVD data model
-  - Generate low level device specific variables (aka structured configs)
-  - Parse templates, build plain text configs
-  - Deliver configs to network devices using Ansible `arista.eos.eos_config`
+- [Ansible AVD](https://avd.arista.com/)
+- [This repository](https://github.com/arista-netdevops-community/avd-cvaas-demo)
