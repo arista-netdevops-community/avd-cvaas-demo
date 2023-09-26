@@ -22,15 +22,25 @@ topology:
   nodes:
     spine1:
       mgmt-ipv4: 192.168.0.10
+      binds:
+        - sn/spine1.txt:/mnt/flash/ceos-config:ro
     spine2:
       mgmt-ipv4: 192.168.0.11
+      binds:
+        - sn/spine2.txt:/mnt/flash/ceos-config:ro
     leaf1:
       mgmt-ipv4: 192.168.0.12
+      binds:
+        - sn/leaf1.txt:/mnt/flash/ceos-config:ro
     leaf2:
       mgmt-ipv4: 192.168.0.13
+      binds:
+        - sn/leaf2.txt:/mnt/flash/ceos-config:ro
     a_host:
       startup-config: init-configs/a_host.cfg
       mgmt-ipv4: 192.168.0.100
+      binds:
+        - sn/a_host.txt:/mnt/flash/ceos-config:ro
 
   links:
   # leaf to spine
