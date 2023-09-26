@@ -5,6 +5,19 @@ mgmt_interface: Management0
 name_servers:
   - 8.8.8.8
 
+# NTP servers
+ntp:
+  local_interface:
+    name: Management0
+    vrf: MGMT
+  servers:
+    - name: time.google.com
+      vrf: MGMT
+    - name: time.windows.com
+      vrf: MGMT
+    - name: time.apple.com
+      vrf: MGMT
+
 dns_domain: avd.lab
 
 # Local Users
