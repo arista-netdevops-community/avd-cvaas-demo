@@ -4,7 +4,7 @@ all:
     CV_SERVERS:
       hosts:
         lab_cv_instance:
-          ansible_host: apiserver.cv-staging.corp.arista.io
+          ansible_host: www.cv-staging.corp.arista.io
     AVD_LAB:
       children:
         AVD_FABRIC:
