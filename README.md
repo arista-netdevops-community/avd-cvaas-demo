@@ -1,5 +1,10 @@
 # AVD and CVaaS Provisioning Demo
 
+To access the slides, please use the following links:
+
+- [Web Slides (Recommended)](https://arista-netdevops-community.github.io/avd-cvaas-demo/)
+- [PDF Slides](https://github.com/arista-netdevops-community/avd-cvaas-demo/blob/gh-pages/avd_extended_workshop.pdf)
+
 ## How to Run the Demo
 
 > **WARNING**: A CVaaS instance is required to run this demo.
