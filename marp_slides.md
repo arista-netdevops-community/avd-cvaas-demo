@@ -107,6 +107,24 @@ footer: '![h:20](https://www.arista.com/assets/images/logo/Arista_Logo.png)'
 
 ---
 
+# Facts About CVaaS
+
+<style scoped>section {font-size: 22px;}</style>
+
+- CVaaS is cloud based
+- Customers are assigned to a region with disaster recovery plan relying on [availability zones (AZ)](https://cloud.google.com/compute/docs/regions-zones)
+- CVaaS backups are multi-region
+- CVaaS is maintained by a dedicated Cloud SRE team and is always up to date
+- Users authenticate to CVaaS via OAuth/SAML providers: Google, Okta, OneLogin, Microsoft Azure AD and custom SAML/OAuth providers
+- The API access for AVD orchestration, etc. is authenticated using service account tokens
+- The only traffic required is HTTPS initiated by switch to CVaaS with cert based authentication and HTTPS from AVD host to CVaaS with token based authentication
+- References:
+  - [CVaaS Configuration Guide](https://www.arista.com/en/cg-cv/cv-cloudvision-as-a-service)
+  - [CVaaS Quick Start Guide](https://www.arista.com/assets/data/pdf/qsg/qsg-books/QS_CloudVision_as_a_Service.pdf)
+  - [CVaaS Security Whitepaper](https://www.arista.com/assets/data/pdf/Whitepapers/CloudVision-as-a-service-security-Whitepaper.pdf)
+
+---
+
 # The Demo
 
 <style scoped>section {font-size: 20px;}</style>
@@ -125,11 +143,6 @@ footer: '![h:20](https://www.arista.com/assets/images/logo/Arista_Logo.png)'
 # Credits and References
 
 <style scoped>section {font-size: 12px;}</style>
-
-<!-- Add footer starting from this slide -->
-<!--
-footer: '![h:20](https://www.arista.com/assets/images/logo/Arista_Logo.png)'
--->
 
 This repository is based on many awesome open source repositories and some free/commercial Github features:
 
