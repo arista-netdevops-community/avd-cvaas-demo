@@ -31,3 +31,15 @@ diff: ## Show the diff between running config and designed config
 .PHONY: test
 test: ## validate the network state
 	cd $(CURRENT_DIR)/avd_inventory; ansible-playbook playbooks/avd_validate.yml
+
+.PHONY: netem_show
+netem_show: ## show netem settings for leaf1
+	sudo containerlab tools netem show -n clab-simple-avd-lab-leaf1
+
+.PHONY: netem_loss_50
+netem_loss_50: ## set 50% loss for eth2 on leaf1
+	sudo containerlab tools netem set -n clab-simple-avd-lab-leaf1 -i eth2 --loss 50
+
+.PHONY: netem_loss_0
+netem_loss_0: ## set loss to 0% for eth2 on leaf1
+	sudo containerlab tools netem set -n clab-simple-avd-lab-leaf1 -i eth2 --loss 0
