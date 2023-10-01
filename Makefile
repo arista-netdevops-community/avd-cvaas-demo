@@ -34,12 +34,12 @@ test: ## validate the network state
 
 .PHONY: netem_show
 netem_show: ## show netem settings for leaf1
-	sudo containerlab tools netem show -n clab-simple-avd-lab-leaf1
+	sudo containerlab tools netem show -n leaf1
 
 .PHONY: netem_loss_50
 netem_loss_50: ## set 50% loss for eth2 on leaf1
-	sudo containerlab tools netem set -n clab-simple-avd-lab-leaf1 -i eth2 --loss 50
+	sudo containerlab tools netem set -n leaf1 -i eth2 --loss 50
 
 .PHONY: netem_loss_0
 netem_loss_0: ## set loss to 0% for eth2 on leaf1
-	sudo containerlab tools netem set -n clab-simple-avd-lab-leaf1 -i eth2 --loss 0
+	sudo containerlab tools netem set -n leaf1 -i eth2 --loss 0
