@@ -4,7 +4,9 @@
         "dockerfile": "Dockerfile",
         "args": {
             "_AR_FILE_PATH": "/support/download/EOS-USA/Active Releases/4.29/EOS-4.29.3M/cEOS-lab/cEOS-lab-4.29.3M.tar.xz",
-            "_ARTOKEN": "${localEnv:ARTOKEN}"
+            "_ARTOKEN": "${localEnv:ARTOKEN}",
+            "CVUSER": "${localEnv:CVUSER}",
+            "CVURL": "${localEnv:CVURL}"
         }
     },
     "remoteEnv": {
@@ -16,5 +18,7 @@
         "cpus": 4,
         "memory": "8gb",
         "storage": "32gb"
-    }
+    },
+    // start clab when container starts
+    "postStartCommand": "make start"
 }

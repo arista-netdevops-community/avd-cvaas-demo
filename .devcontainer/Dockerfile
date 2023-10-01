@@ -2,6 +2,8 @@ FROM ghcr.io/arista-netdevops-community/avd-cvaas-demo/demo-base:latest
 
 ARG _ARTOKEN
 ARG _AR_FILE_PATH
+ARG CVUSER
+ARG CVURL
 
 # add ceos-lab image is _ARTOKEN is not empty
 RUN if [ ! -z ${_ARTOKEN} ]; \
