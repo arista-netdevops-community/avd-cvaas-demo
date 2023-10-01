@@ -1,4 +1,5 @@
 name: simple-avd-lab
+prefix: ""
 
 mgmt:
   network: custom_mgmt
