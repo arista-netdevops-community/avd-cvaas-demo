@@ -15,6 +15,8 @@ The Dev Container can be started on any machine with Docker using [supporting to
 Before you start the Dev Container, you must set following environment variables on your system:
 
 - ARTOKEN - token required to download cEOS image from [arista.com](https://www.arista.com/). You can find it in your arista.com profile settings if it's enabled for your account.
+- CVURL - the url to be used to contact the CVaaS instance. For example: `www.cv-staging.corp.arista.io`
+- CVUSER - for CVaaS token based authentication the username must be `cvaas`. `cvaas` is the default value if the variable is not set.
 - CVTOKEN - CVaaS streaming token. This token must be created in advance and remain valid during the demo runtime.
 - CV_API_TOKEN - CVaaS API token. This token must be created in advance and remain valid during the demo runtime.
 
