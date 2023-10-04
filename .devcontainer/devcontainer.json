@@ -3,7 +3,7 @@
 	"build": {
         "dockerfile": "Dockerfile",
         "args": {
-            "_AR_FILE_PATH": "/support/download/EOS-USA/Active Releases/4.29/EOS-4.29.3M/cEOS-lab/cEOS-lab-4.29.3M.tar.xz",
+            "_AR_FILE_PATH": "/support/download/EOS-USA/Active Releases/4.30/EOS-4.30.3M/cEOS-lab/cEOS-lab-4.30.3M.tar.xz",
             "_ARTOKEN": "${localEnv:ARTOKEN}",
             "CVUSER": "${localEnv:CVUSER}",
             "CVURL": "${localEnv:CVURL}"
