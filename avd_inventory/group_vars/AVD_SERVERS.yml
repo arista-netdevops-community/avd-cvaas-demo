@@ -13,7 +13,8 @@ servers:
         switch_ports: [Ethernet4, Ethernet4]
         switches: [leaf1, leaf2]
         profile: TENANT_A
+        ethernet_segment:
+          short_esi: dead:beef:0001
         port_channel:
           description: PortChannel
           mode: active
-          short_esi: dead:beef:0001
