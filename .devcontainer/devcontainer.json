@@ -6,13 +6,15 @@
             "_AR_FILE_PATH": "/support/download/EOS-USA/Active Releases/4.30/EOS-4.30.3M/cEOS-lab/cEOS-lab-4.30.3M.tar.xz",
             "_ARTOKEN": "${localEnv:ARTOKEN}",
             "CVUSER": "${localEnv:CVUSER}",
-            "CVURL": "${localEnv:CVURL}"
+            "CVURL": "${localEnv:CVURL}",
+            "CV_API_TOKEN": "${localEnv:CV_API_TOKEN}",
+            "CONTAINERWSF": "${containerWorkspaceFolder}"
         }
     },
-    "remoteEnv": {
-		"CONTAINERWSF": "${containerWorkspaceFolder}"
-	},
-    "onCreateCommand": "docker import /home/vscode/tmp/ceos-lab-temp ceos-lab:latest; rm -rf /home/vscode/tmp/; echo \"${localEnv:CVTOKEN}\" > ${CONTAINERWSF}/clab/cv-onboarding-token",
+    // "remoteEnv": {
+	// 	"CONTAINERWSF": "${containerWorkspaceFolder}"
+	// },
+    // "onCreateCommand": "docker import /home/vscode/tmp/ceos-lab-temp ceos-lab:latest; rm -rf /home/vscode/tmp/; echo \"${localEnv:CVTOKEN}\" > ${CONTAINERWSF}/clab/cv-onboarding-token",
     // set minimum host requirements for cLab
     "hostRequirements": {
         "cpus": 4,
