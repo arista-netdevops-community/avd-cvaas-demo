@@ -18,7 +18,5 @@ RUN if [ ! -z ${_ARTOKEN} ]; \
     && curl "$DOWNLOAD_URL" --output /home/vscode/tmp/ceos-lab-temp \
     ; fi
 
-RUN docker import /home/vscode/tmp/ceos-lab-temp ceos-lab:latest \
-    && rm -rf /home/vscode/tmp/ \
-    && CVTOKEN=$(curl -H "Authorization: Bearer ${CV_API_TOKEN}" https://www.cv-staging.corp.arista.io/api/v3/services/admin.Enrollment/AddEnrollmentToken -d '{"enrollmentToken":{"reenrollDevices":["*"],"validFor":"24h"}}' | sed -n 's|.*"token":"\([^"]*\)".*|\1|p') \
-    && echo "${CV_API_TOKEN}" > ${CONTAINERWSF}/clab/cv-onboarding-token"
+RUN CVTOKEN=$(curl -H "Authorization: Bearer ${CV_API_TOKEN}" "https://www.cv-staging.corp.arista.io/api/v3/services/admin.Enrollment/AddEnrollmentToken" -d '{"enrollmentToken":{"reenrollDevices":["*"],"validFor":"24h"}}' | sed -n 's|.*"token":"\([^"]*\)".*|\1|p') \
+    && echo "$CVTOKEN" > /home/vscode/tmp/cv-onboarding-token
