@@ -10,9 +10,9 @@ RUN if [ ! -z ${_ARTOKEN} ]; \
     && ARSESSION=$(curl -X "POST" "https://www.arista.com/custom_data/api/cvp/getSessionCode/" -H 'Content-Type: application/json'   -d "{\"accessToken\": \"$ARTOKEN\"}" | sed -n 's|.*"session_code":"\([^"]*\)".*|\1|p') \
     && FILE_PATH=${_AR_FILE_PATH} \
     && DOWNLOAD_URL=$(curl -X "POST" "https://www.arista.com/custom_data/api/cvp/getDownloadLink/" -H 'Content-Type: application/json' -d "{\"sessionCode\": \"$ARSESSION\", \"filePath\": \"$FILE_PATH\"}" | sed -n 's|.*"url":"\([^"]*\)".*|\1|p') \
-    && mkdir -p /home/vscode/tmp \
-    && curl "$DOWNLOAD_URL" --output /home/vscode/tmp/ceos-lab-temp \
+    && mkdir -p /home/avd/tmp \
+    && curl "$DOWNLOAD_URL" --output /home/avd/tmp/ceos-lab-temp \
     ; fi
 
 RUN CVTOKEN=$(curl -H "Authorization: Bearer ${CV_API_TOKEN}" "https://www.cv-staging.corp.arista.io/api/v3/services/admin.Enrollment/AddEnrollmentToken" -d '{"enrollmentToken":{"reenrollDevices":["*"],"validFor":"24h"}}' | sed -n 's|.*"token":"\([^"]*\)".*|\1|p') \
-    && echo "$CVTOKEN" > /home/vscode/tmp/cv-onboarding-token
+    && echo "$CVTOKEN" > /home/avd/tmp/cv-onboarding-token
