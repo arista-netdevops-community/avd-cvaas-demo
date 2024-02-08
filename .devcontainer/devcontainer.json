@@ -4,7 +4,8 @@
         "dockerfile": "Dockerfile",
         "args": {
             "_AR_FILE_PATH": "/support/download/EOS-USA/Active Releases/4.30/EOS-4.30.3M/cEOS-lab/cEOS-lab-4.30.3M.tar.xz",
-            "_ARTOKEN": "${localEnv:ARTOKEN}"
+            "_ARTOKEN": "${localEnv:ARTOKEN}",
+            "CLAB_VERSION": "0.50.0"
         }
     },
     "onCreateCommand": "docker import /home/avd/tmp/ceos-lab-temp ceos-lab:latest; rm -rf /home/avd/tmp/;",
