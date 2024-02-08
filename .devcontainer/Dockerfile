@@ -3,6 +3,7 @@ FROM ghcr.io/aristanetworks/avd/universal:python3.11-avd-devel
 ARG _ARTOKEN
 ARG _AR_FILE_PATH
 
+RUN bash -c "$(curl -sL https://get.containerlab.dev)" -- -v ${CLAB_VERSION}
 # add ceos-lab image is _ARTOKEN is not empty
 RUN if [ ! -z ${_ARTOKEN} ]; \
     then \
@@ -13,6 +14,3 @@ RUN if [ ! -z ${_ARTOKEN} ]; \
     && mkdir -p /home/avd/tmp \
     && curl "$DOWNLOAD_URL" --output /home/avd/tmp/ceos-lab-temp \
     ; fi
-
-RUN CVTOKEN=$(curl -H "Authorization: Bearer ${CV_API_TOKEN}" "https://www.cv-staging.corp.arista.io/api/v3/services/admin.Enrollment/AddEnrollmentToken" -d '{"enrollmentToken":{"reenrollDevices":["*"],"validFor":"24h"}}' | sed -n 's|.*"token":"\([^"]*\)".*|\1|p') \
-    && echo "$CVTOKEN" > /home/avd/tmp/cv-onboarding-token
