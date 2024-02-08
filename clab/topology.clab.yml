@@ -13,13 +13,6 @@ topology:
   defaults:
     kind: ceos
     startup-config: init-configs/ceos-init.cfg
-    extras:
-      ceos-copy-to-flash:
-        - clab/cv-onboarding-token
-    # an alternative to ceos-copy-to-flash could be bind
-    # keeping the bind settings here just in case
-    # binds:
-    #   - cv-onboarding-token:/mnt/flash/cv-onboarding-token:ro
   nodes:
     spine1:
       mgmt-ipv4: 192.168.0.10

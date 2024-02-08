@@ -1,11 +1,7 @@
-FROM ghcr.io/arista-netdevops-community/avd-cvaas-demo/demo-base:latest
+FROM ghcr.io/aristanetworks/avd/universal:python3.11-avd-devel
 
 ARG _ARTOKEN
 ARG _AR_FILE_PATH
-ARG CVUSER
-ARG CVURL
-ARG CV_API_TOKEN
-ARG CONTAINERWSF
 
 # add ceos-lab image is _ARTOKEN is not empty
 RUN if [ ! -z ${_ARTOKEN} ]; \
